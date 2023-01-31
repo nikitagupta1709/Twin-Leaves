@@ -10,7 +10,6 @@ export const Product = () => {
   const [filteredData,setFilteredData] = useState("");
   const [loading, setLoad] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(0);
 
   useEffect(() => {
     getdata()
@@ -18,7 +17,7 @@ export const Product = () => {
 
   const getdata = async () => {
     setLoad(true);
-    let res = await fetch("https://originhighway-staging-kxyaws5ixa-uc.a.run.app/proxy/catalog/products")
+    let res = await fetch(`https://originhighway-staging-kxyaws5ixa-uc.a.run.app/proxy/catalog/products?page=${currentPage}`)
     let data = await res.json()
     setData(data.data.products)
     setSearchApi(data.data.products);
