@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { Navigate, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './product.css'
 
 export const Product = () => {
@@ -13,7 +13,7 @@ export const Product = () => {
 
   useEffect(() => {
     getdata()
-  }, [])
+  }, [currentPage])
 
   const getdata = async () => {
     setLoad(true);
@@ -25,7 +25,7 @@ export const Product = () => {
   }
 
   const handleSearch = async(event) => {
-    if(event.target.value == ""){
+    if(event.target.value === ""){
       setData(searchApi);
     }
     else{
@@ -106,18 +106,23 @@ export const Product = () => {
         <option value="Snacks & Branded Foods">Snacks & Branded Foods</option>
       </select>
 
-      <div classname="box">
+      <div id="mainDiv">
         {!loading ? productData.map((item) => (
           <NavLink id="nav" to={`/products/${item.id}`}>
             <div key={item.id} className="product">
               <img src={item.images.top_left} height="200px" width="200px" alt="" />
               <p>{item.brand}</p>
               <p>{item.name}</p>
+              <p>Category: {item.main_category}</p>
               <p>Rs.{item.mrp.mrp}</p>
+              <button>Add to Cart</button>
             </div>
           </NavLink>
         )) : "Loading..."}
       </div>
+      <button disabled={currentPage === 1} onClick={ () => setCurrentPage(currentPage - 1)} >PREV</button>
+      <button>{currentPage}</button>
+      <button onClick={ () => setCurrentPage(currentPage + 1)}>NEXT</button>
     </>
   )
 }
