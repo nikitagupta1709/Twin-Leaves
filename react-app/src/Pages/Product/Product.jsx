@@ -122,7 +122,7 @@ export const Product = () => {
       </div>
       <button disabled={currentPage === 1} onClick={ () => setCurrentPage(currentPage - 1)} >PREV</button>
       <button>{currentPage}</button>
-      <button onClick={ () => setCurrentPage(currentPage + 1)}>NEXT</button>
+      <button disabled={currentPage === 9} onClick={ () => setCurrentPage(currentPage + 1)}>NEXT</button>
     </>
   )
 }
