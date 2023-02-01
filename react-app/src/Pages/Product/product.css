@@ -28,6 +28,9 @@ button{
     font-size: small;
     color: darkgrey;
 }
+.loader{
+    margin: auto;
+}
 select{
     padding: 10px;
     margin-left: 21px;

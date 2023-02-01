@@ -105,20 +105,24 @@ export const Product = () => {
         <option value="Foodgrains, Oil & Masala">Foodgrains, Oil & Masala</option>
         <option value="Snacks & Branded Foods">Snacks & Branded Foods</option>
       </select>
-
-      <div id="mainDiv">
-        {!loading ? productData.map((item) => (
-          <NavLink id="nav" to={`/products/${item.id}`}>
-            <div key={item.id} className="product">
-              <img src={item.images.top_left} height="200px" width="200px" alt="" />
-              <p>{item.brand}</p>
-              <p>{item.name}</p>
-              <p>Category: {item.main_category}</p>
-              <p>Rs.{item.mrp.mrp}</p>
-              <button>Add to Cart</button>
+      <div>
+        { !loading ? 
+            <div id="mainDiv">
+              {productData.map((item) => (
+                <NavLink id="nav" to={`/products/${item.id}`}>
+                  <div key={item.id} className="product">
+                    <img src={item.images.top_left} height="200px" width="200px" alt="" />
+                    <p>{item.brand}</p>
+                    <p>{item.name}</p>
+                    <p>Category: {item.main_category}</p>
+                    <p>Rs.{item.mrp.mrp}</p>
+                    <button>Add to Cart</button>
+                  </div>
+                </NavLink>
+              ))}
             </div>
-          </NavLink>
-        )) : "Loading..."}
+          : <img className='loader' src="https://wpamelia.com/wp-content/uploads/2018/11/ezgif-2-6d0b072c3d3f.gif" alt=""/>
+        }
       </div>
       <button disabled={currentPage === 1} onClick={ () => setCurrentPage(currentPage - 1)} >PREV</button>
       <button>{currentPage}</button>
