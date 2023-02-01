@@ -94,12 +94,12 @@ export const Product = () => {
       <br/>
     
       <select onChange={handlesort} name="" id="">
-        <option value="all">Sort by Price</option>
+        <option value="all">Price</option>
         <option value="asc">low to high</option>
         <option value="des">high to low</option>
       </select>
       <select onChange={handlefilter} name="" id="">
-        <option value="all">Sort by Filter</option>
+        <option value="all">Filter</option>
         <option value="Baby care">Baby care</option>
         <option value="Fruits & Vegetables">Fruits & Vegetables</option>
         <option value="Foodgrains, Oil & Masala">Foodgrains, Oil & Masala</option>
