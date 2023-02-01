@@ -59,41 +59,41 @@ select{
     select{
         width: 30%;
     }
+}
+@media only screen and (min-width: 767px) and (max-width: 1024px)  {
+    #mainDiv{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 15px;
+        padding: 20px;
     }
-    @media only screen and (min-width: 767px) and (max-width: 1024px)  {
-        #mainDiv{
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 15px;
-            padding: 20px;
-        }
-        .product{
-            padding: 10px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-            cursor: pointer;
-            border-radius: 12px;
-        }
-        select{
-            width: 20%;
-        }
+    .product{
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+    select{
+        width: 20%;
+    }
 
+}
+@media only screen and (max-width: 425px)  {
+    #mainDiv{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 15px;
+        padding: 20px;
     }
-    @media only screen and (max-width: 425px)  {
-        #mainDiv{
-            display: grid;
-            grid-template-columns: repeat(1,1fr);
-            gap: 15px;
-            padding: 20px;
-        }
-        .product{
-            padding: 10px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-            cursor: pointer;
-            border-radius: 12px;
-        }
-        select{
-            width: 20%;
-        }
+    .product{
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+    select{
+        width: 20%;
+    }
 
-       
-    }
+    
+}
